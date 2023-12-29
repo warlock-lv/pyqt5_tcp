@@ -4,8 +4,8 @@
 > > 概述、界面绘制 、界面美化]、事件、信号与槽、PyQt5多线程、数据结构定义——解决TCP粘包问题、功能实现(注册/登录/消息/文件传输/服务日志)
 
 <center class ='img'>
-<img src="./part_server/res/pic-server.png" width="49%" />
-<img src="./part_server/res/pic-client.png" width="48%" />
+<img src="./part_server/res/pic-server.png" width="46%" />
+<img src="./part_server/res/pic-client.png" width="45%" />
 </center>
 
 

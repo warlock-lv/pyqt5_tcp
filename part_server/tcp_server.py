@@ -40,7 +40,7 @@ class SForm(QWidget):
         layout_hbox = QHBoxLayout()
         layout_hbox.addStretch()
         # 调用方法绘制界面
-        self.setWindowTitle('服务器软件')
+        self.setWindowTitle('服务器端')
         layout_hbox.addWidget(self.group_box_conf)
         layout_hbox.addWidget(self.group_box_log)
         layout_main.addLayout(layout_hbox)

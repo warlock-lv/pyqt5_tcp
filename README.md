@@ -69,6 +69,7 @@ pyinstaller -w -F ./main.py --clean -i ./icon.ico --noconfirm \
 ## TODO
 - 两端增加自定义端口功能
 - 服务器增加停止服务功能
+- 打包成dmg、msi可安装包
 
 
 

@@ -1,0 +1,19 @@
+# 文件夹
+.idea/
+docs/
+dist/
+logs/
+temp/
+venv/
+build/
+__pycache__/
+
+
+
+# 文件
+*.log
+*.pyc
+*.DS_Store
+gunicorn.pid
+
+

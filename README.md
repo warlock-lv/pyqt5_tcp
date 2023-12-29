@@ -7,6 +7,10 @@
 <img src="./part_server/res/pic-server.png" width="41%" /> &nbsp;&nbsp; <img src="./part_server/res/pic-client.png" width="40%" />
 </center>
 
+<p align="center">
+<img src="./part_server/res/pic-server.png" width="41%" /> &nbsp;&nbsp; <img src="./part_server/res/pic-client.png" width="40%" />
+</p>
+
 
 ## 应用功能
 * 用户注册、登录  

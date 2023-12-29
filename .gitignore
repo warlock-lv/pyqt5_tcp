@@ -18,3 +18,4 @@ gunicorn.pid
 *.zip
 
 
+/part_client/res/code.png

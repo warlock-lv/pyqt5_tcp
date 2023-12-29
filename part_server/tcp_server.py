@@ -19,9 +19,11 @@ from utils.config import conf
 
 class SForm(QWidget):
     signal_finish = pyqtSignal()  # 结束线程的信号
+    numc = 0  # 已连接客户端数量
 
     def __init__(self):
         super().__init__()
+        self.label_numc = None
         self.btn_run, self.btn_send, self.sel_user, self.box_umsg = None, None, None, None
         self.sthread, self.max_link, self.wk_folder, self.btn_sel_path = None, None, None, None
         self.group_box_conf, self.group_box_log, self.group_box_msg = None, None, None
@@ -114,10 +116,13 @@ class SForm(QWidget):
         self.box_umsg = QLineEdit()
         self.btn_send = QPushButton('发送消息')
         self.btn_send.setStyleSheet('QPushButton {background-color: green;}')
+        self.label_numc = QLabel('已连接 - 0')
+        self.label_numc.setStyleSheet("""QLabel {color: #FFFF00;}""")
         # childgrid.addWidget(self.box_umsg, 0, 0)
         # childgrid.addWidget(self.btn_send, 0, 1)
         childgrid.addWidget(self.box_umsg, 0, 0, 2, 1)
         childgrid.addWidget(self.btn_send, 0, 1, 2, 1)
+        childgrid.addWidget(self.label_numc, 0, 2, 2, 1)
         # 修改 create_group_box_msg 方法中的布局代码，使得 self.box_umsg 和 self.btn_send 的宽度比例为 3:1
         childgrid.setColumnStretch(0, 4)  # todo, 不生效 不清楚原因
         childgrid.setColumnStretch(1, 1)
@@ -155,6 +160,7 @@ class SForm(QWidget):
             self.btn_run.setEnabled(False)
             self.btn_sel_path.setEnabled(False)
             self.max_link.setEnabled(False)
+            self.wk_folder.setEnabled(False)
 
             # 实例化服务器线程
             self.sthread = QThread()
@@ -180,16 +186,20 @@ class SForm(QWidget):
         umsgBox = MyQTextBrowser()
         self.user_box[ur] = umsgBox
         self.stack.addWidget(umsgBox)
-
-    # 显示信息
-    def msg_show(self, ur, msg):
-        self.user_box[ur].append(msg)
+        self.numc += 1
+        self.label_numc.setText(f'已连接 - {self.numc}')
 
     # 移除用户
     def user_remove(self, ur):
         user = self.sel_user.findText(ur)
         self.sel_user.removeItem(user)
         self.stack.removeWidget(self.user_box[ur])
+        self.numc -= 1
+        self.label_numc.setText(f'已连接 - {self.numc}')
+
+    # 显示信息
+    def msg_show(self, ur, msg):
+        self.user_box[ur].append(msg)
 
     # 根据选择的用户改变当前对话框
     def change_box(self, ur):

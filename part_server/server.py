@@ -46,7 +46,6 @@ class Server(QObject):
             c, addr = self.s.accept()  # 每接收到一个连接请求
             self.cnum += 1  # 连接数加1
             cq = Queue()  # 实例化一个队列作为发送线程与接收线程间传递数据的通道
-
             # 开启接收线程
             crthread = Thread(target=self.crec, args=(c, addr, cq))
             crthread.daemon = True  # 设置随主线程退出
@@ -65,9 +64,8 @@ class Server(QObject):
             if tp == 'end':  # 如果要求结束
                 q.put(head_dic)  # 将其传递给发送线程并跳出
                 break
-            else:
-                cnt = head_dic['cnt']  # 提取命令内容
 
+            cnt = head_dic['cnt']  # 提取命令内容
             if tp == 'lg':  # 要求登录则调用登录处理方法
                 self.login(cnt, q)
             elif tp == 'rgs':

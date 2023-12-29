@@ -3,11 +3,10 @@
 > 一个基于PyQt5的TCP文件传输应用
 > > 概述、界面绘制 、界面美化]、事件、信号与槽、PyQt5多线程、数据结构定义——解决TCP粘包问题、功能实现(注册/登录/消息/文件传输/服务日志)
 
-<img src="./part_server/res/pic-server.png"  />
-
-<img src="./part_server/res/pic-client.png"  />
-
-
+<center class ='img'>
+<img src="./part_server/res/pic-server.png" width="49%" />
+<img src="./part_server/res/pic-client.png" width="48%" />
+</center>
 
 
 ## 应用功能
@@ -25,23 +24,23 @@
 
 
 ## 备注
-* 本代码基于[pynet](https://github.com/sangyx/pynet)，点击跳转
+* 本代码基于 [pynet 点击跳转](https://github.com/sangyx/pynet)
 * 因为本人想开发个界面工具，所以借这个代码入门学习一下，感谢原作者sangyx
 * Mac m1 的pyinstaller打包不能给 Mac intel 的使用，相反也一样，运行会报错：Error：Bad CPU type in executable
 
 ## 优化内容
-* 代码风格，变量定义遵循pep8
-* 部分可配置量 提取到config文件
-* 初始运行服务端，创建数据表、初始用户
-* 代码优化，面向对象封装，重新组织项目文件树
-* 增加，只运行客户端时，提示"服务端未运行"界面
-* 解决打包后找不到数据库文件、保存数据丢失问题
+- 代码风格，变量定义遵循pep8
+- 部分可配置量 提取到config文件
+- 初始运行服务端，创建数据表、初始用户
+- 代码优化，面向对象封装，重新组织项目文件树
+- 增加，只运行客户端时，提示"服务端未运行"界面
+- 解决打包后找不到数据库文件、保存数据丢失问题
 - 支持html样式文本显示，MyTextBrowser
+- 美化进度条样式，MyProgressBar
 
 ## 打包命令
 * > pyinstaller -w -F ./tcp_server.py --clean -i ./res/icons/icon3.icns --noconfirm
 * > pyinstaller -w -F ./tcp_client.py --clean -i ./res/icons/icon3.icns --noconfirm
-
 * > pyinstaller --clean --noconfirm ./tcp_server.spec
 * > pyinstaller --clean --noconfirm ./tcp_client.spec
 

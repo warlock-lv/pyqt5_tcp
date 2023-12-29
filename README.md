@@ -3,6 +3,13 @@
 > 一个基于PyQt5的TCP文件传输应用
 > > 概述、界面绘制 、界面美化]、事件、信号与槽、PyQt5多线程、数据结构定义——解决TCP粘包问题、功能实现(注册/登录/消息/文件传输/服务日志)
 
+<img src="./part_server/res/pic-server.png"  />
+
+<img src="./part_server/res/pic-client.png"  />
+
+
+
+
 ## 应用功能
 * 用户注册、登录  
 * 文件传输、校验  

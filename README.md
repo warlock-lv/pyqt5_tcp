@@ -40,10 +40,10 @@
 
 ## 打包命令
 * > pyinstaller -w -F ./tcp_server.py --clean -i ./res/icons/icon3.icns --noconfirm
-* > pyinstaller -w -F ./main_client.py --clean -i ./res/icons/icon3.icns --noconfirm
+* > pyinstaller -w -F ./tcp_client.py --clean -i ./res/icons/icon3.icns --noconfirm
 
 * > pyinstaller --clean --noconfirm ./tcp_server.spec
-* > pyinstaller --clean --noconfirm ./main_client.spec
+* > pyinstaller --clean --noconfirm ./tcp_client.spec
 
 
 其他参数（按需求选择）：
